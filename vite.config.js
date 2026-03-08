@@ -8,7 +8,9 @@ export default defineConfig({
     tailwindcss(),
   ],
   resolve: {
-    // This forces Vercel to only use ONE version of these 3D libraries
     dedupe: ['three', '@react-three/fiber', '@react-three/drei', '@react-three/postprocessing'],
   },
+  build: {
+    chunkSizeWarningLimit: 2000, // Tells Vite: "Relax, I am building a 3D site, the files are going to be bigger."
+  }
 })
