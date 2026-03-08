@@ -187,8 +187,14 @@ export default function Scene() {
       </Float>
 
       {/* Post-Processing Bloom Effect */}
-      <EffectComposer>
-        <Bloom luminanceThreshold={0.2} luminanceSmoothing={0.9} height={300} intensity={1.5} />
+      <EffectComposer disableNormalPass>
+        {/* We raised the threshold to 0.8 so ONLY the bright emissive cores glow, leaving the wireframes sharp and 3D */}
+        <Bloom 
+          luminanceThreshold={0.8} 
+          luminanceSmoothing={0.9} 
+          height={300} 
+          intensity={2.0} 
+        />
       </EffectComposer>
     </group>
   )
