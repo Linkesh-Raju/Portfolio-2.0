@@ -49,7 +49,7 @@ function ForgeXCore({ position }) {
       position={position}
       onPointerOver={() => { setHovered(true); document.body.style.cursor = 'pointer' }}
       onPointerOut={() => { setHovered(false); document.body.style.cursor = 'auto' }}
-      onClick={() => window.open('https://github.com/linkesh-raju', '_blank')}
+      onClick={() => window.open('https://github.com/Linkesh-Raju/FORGE-X', '_blank')}
     >
       <mesh scale={1.5}>
         <icosahedronGeometry args={[1, 1]} />
@@ -79,7 +79,7 @@ function AirWritingLens({ position }) {
       position={position}
       onPointerOver={() => { setHovered(true); document.body.style.cursor = 'pointer' }}
       onPointerOut={() => { setHovered(false); document.body.style.cursor = 'auto' }}
-      onClick={() => window.open('https://github.com/linkesh-raju', '_blank')}
+      onClick={() => window.open('https://github.com/Linkesh-Raju/Air-Writing-2.0', '_blank')}
     >
       <mesh rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[1.5, 0.05, 16, 100]} />
@@ -113,7 +113,7 @@ function PharmaFlowCapsule({ position }) {
       position={position}
       onPointerOver={() => { setHovered(true); document.body.style.cursor = 'pointer' }}
       onPointerOut={() => { setHovered(false); document.body.style.cursor = 'auto' }}
-      onClick={() => window.open('https://github.com/linkesh-raju', '_blank')}
+      onClick={() => window.open('https://github.com/Linkesh-Raju/pharma-flow', '_blank')}
     >
       <mesh scale={1.2}>
         <capsuleGeometry args={[0.8, 1.5, 4, 16]} />
@@ -144,7 +144,6 @@ export default function Scene() {
   useFrame((state) => {
     const offset = scroll.offset 
     state.camera.position.z = 10 - offset * 60
-    // Reduce the side-to-side sway on mobile
     state.camera.position.x = Math.sin(offset * Math.PI * 2) * (isMobile ? 1 : 3)
     state.camera.lookAt(0, 0, state.camera.position.z - 15)
 
@@ -158,7 +157,6 @@ export default function Scene() {
     }
   })
 
-  // Dynamic X and Y positioning based on screen size
   const posRight = isMobile ? 0 : 5
   const posLeft = isMobile ? 0 : -5
 
