@@ -7,4 +7,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  resolve: {
+    // This forces Vercel to only use ONE version of these 3D libraries
+    dedupe: ['three', '@react-three/fiber', '@react-three/drei', '@react-three/postprocessing'],
+  },
 })
